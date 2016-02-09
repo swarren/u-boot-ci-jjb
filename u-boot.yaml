@@ -87,7 +87,6 @@
        - project: 'u-boot-{uboot_git_remote}-{uboot_git_branch_name}-test-py'
          condition: 'UNSTABLE_OR_BETTER'
          predefined-parameters: |
-          build_name=build-#${{BUILD_NUMBER}}
           build_to_test=${{BUILD_NUMBER}}
 
 - job-template:
@@ -98,10 +97,6 @@
        name: 'build_to_test'
        default: '1'
        description: 'Version of build u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build to test'
-    - string:
-       name: 'build_name'
-       default: 'build-#1'
-       description: 'Name of this build'
    axes:
     - axis:
        type: 'user-defined'
@@ -134,7 +129,7 @@
        wipe-workspace: False
    wrappers:
     - build-name:
-       name: '#${{BUILD_NUMBER}}-${{build_name}}'
+       name: '#${{BUILD_NUMBER}}-build-${{build_to_test}}'
    builders:
     - copyartifact:
        project: 'u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build/U_BOOT_BOARD=${{U_BOOT_BOARD}}'
