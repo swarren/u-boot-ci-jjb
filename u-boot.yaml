@@ -20,6 +20,10 @@
 
 - job-template:
    name: 'u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build'
+   disabled: false
+   execution-strategy:
+     sequential: true
+   child-workspace: '.'
    project-type: 'matrix'
    axes:
     - axis:
@@ -77,7 +81,7 @@
     - shell: './src/u-boot-ci-scripts/build.sh "${{U_BOOT_BOARD}}"'
    publishers:
     - archive:
-       artifacts: 'artifacts-out/*'
+       artifacts: 'artifacts-out/${{U_BOOT_BOARD}}/*'
        fingerprint: True
     - email:
        recipients: 'swarren@nvidia.com'
