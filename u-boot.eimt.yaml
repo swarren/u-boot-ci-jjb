@@ -118,6 +118,7 @@
        name: 'U_BOOT_BOARD'
        values:
         - 'p2371-0000'
+        - 'dalmore'
         - 'sandbox'
    scm:
     - git:
