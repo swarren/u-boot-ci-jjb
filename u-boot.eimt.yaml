@@ -117,8 +117,9 @@
        type: 'user-defined'
        name: 'U_BOOT_BOARD'
        values:
-        - 'p2371-0000'
         - 'dalmore'
+        - 'jetson-tk1'
+        - 'p2371-0000'
         - 'sandbox'
    scm:
     - git:
