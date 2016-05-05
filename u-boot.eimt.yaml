@@ -117,6 +117,7 @@
        type: 'user-defined'
        name: 'U_BOOT_BOARD'
        values:
+        - 'beaver'
         - 'dalmore'
         - 'jetson-tk1'
         - 'p2371-0000'
