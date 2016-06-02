@@ -62,6 +62,8 @@
          ]
          switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build') {{
          case ~/^.*uboot-tegra.*$/:
+             boards.add('p2771-0000')
+             break
          case ~/^.*github_swarren_u-boot.*$/:
              boards.add('p2771-0000-a02')
              boards.add('p2771-0000-b00')
