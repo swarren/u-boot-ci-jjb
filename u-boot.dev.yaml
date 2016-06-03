@@ -19,6 +19,7 @@
 # DEALINGS IN THE SOFTWARE.
 
 - job-template:
+   extra_email_recipients: ''
    name: 'u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build'
    disabled: false
    project-type: 'matrix'
@@ -96,7 +97,7 @@
        artifacts: 'artifacts-out/${{U_BOOT_BOARD}}/*'
        fingerprint: True
     - email:
-       recipients: 'swarren@nvidia.com'
+       recipients: 'swarren@nvidia.com {extra_email_recipients}'
        notify-every-unstable-build: True
        send-to-individuals: False
     - trigger-parameterized-builds:
@@ -106,6 +107,7 @@
           build_to_test=${{BUILD_NUMBER}}
 
 - job-template:
+   extra_email_recipients: ''
    name: 'u-boot-{uboot_git_remote}-{uboot_git_branch_name}-test-py'
    disabled: false
    project-type: 'matrix'
@@ -160,7 +162,7 @@
        artifacts: 'artifacts-out/*'
        fingerprint: True
     - email:
-       recipients: 'swarren@nvidia.com'
+       recipients: 'swarren@nvidia.com {extra_email_recipients}'
        notify-every-unstable-build: True
        send-to-individuals: False
 
@@ -239,6 +241,7 @@
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H'
+       extra_email_recipients: 'twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_usb'
        uboot_git_url: 'git://git.denx.de/u-boot-usb.git'
@@ -275,3 +278,4 @@
        uboot_git_branch: 'dev/twarren/for-eimt'
        uboot_git_branch_name: 'twarren'
        git_poll_interval: '*'
+       extra_email_recipients: 'twarren@nvidia.com'
