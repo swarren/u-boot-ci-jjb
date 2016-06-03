@@ -269,3 +269,9 @@
        uboot_git_branch: 'main-v2015.07-rc2'
        uboot_git_branch_name: 'main'
        git_poll_interval: '*'
+    - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
+       uboot_git_remote: 'gitmaster_3rdparty_uboot'
+       uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
+       uboot_git_branch: 'dev/twarren/for-eimt'
+       uboot_git_branch_name: 'twarren'
+       git_poll_interval: '*'
