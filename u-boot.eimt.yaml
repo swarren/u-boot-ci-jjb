@@ -62,15 +62,14 @@
              'sandbox',
          ]
          switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build') {{
-         case ~/^.*denx_uboot-master.*$/:
-         case ~/^.*denx_uboot_dm-master.*$/:
-         case ~/^.*denx_uboot-tegra-master.*$/:
-         case ~/^.*denx_uboot_usb-master.*$/:
-             boards.add('p2771-0000')
+         case ~/^.*gitmaster_3rdparty_uboot.*$/:
              break
          case ~/^.*github_swarren_u-boot.*$/:
              boards.add('p2771-0000-a02')
              boards.add('p2771-0000-b00')
+             break
+         default:
+             boards.add('p2771-0000')
              break
          }}
          return boards.sort()
