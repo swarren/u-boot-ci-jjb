@@ -61,6 +61,7 @@
          case ~/^.*gitmaster_3rdparty_uboot.*$/:
              break
          case ~/^.*github_swarren_u-boot.*$/:
+         case ~/^.*u-boot-denx_uboot-tegra.*$/:
              boards.add('p2771-0000-a02')
              boards.add('p2771-0000-b00')
              break
