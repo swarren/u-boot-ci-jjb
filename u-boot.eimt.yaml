@@ -25,6 +25,11 @@
    project-type: 'matrix'
    node: 'build'
    child-workspace: '.'
+   logrotate:
+      daysToKeep: 180
+      numToKeep: 30
+      artifactDaysToKeep: 30
+      artifactNumToKeep: 3
    axes:
     - axis:
        type: 'slave'
@@ -117,6 +122,11 @@
    disabled: false
    project-type: 'matrix'
    node: 'test'
+   logrotate:
+      daysToKeep: 180
+      numToKeep: 10
+      artifactDaysToKeep: -1
+      artifactNumToKeep: -1
    parameters:
     - string:
        name: 'build_to_test'

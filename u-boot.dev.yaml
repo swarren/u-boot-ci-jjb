@@ -26,6 +26,11 @@
    child-workspace: '.'
    execution-strategy:
      sequential: true
+   logrotate:
+      daysToKeep: 180
+      numToKeep: 10
+      artifactDaysToKeep: 30
+      artifactNumToKeep: 3
    axes:
     - axis:
        type: 'groovy'
@@ -112,6 +117,11 @@
    name: 'u-boot-{uboot_git_remote}-{uboot_git_branch_name}-test-py'
    disabled: false
    project-type: 'matrix'
+   logrotate:
+      daysToKeep: 180
+      numToKeep: 10
+      artifactDaysToKeep: -1
+      artifactNumToKeep: -1
    parameters:
     - string:
        name: 'build_to_test'
