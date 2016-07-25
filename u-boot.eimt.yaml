@@ -149,10 +149,10 @@
         - 'sandbox'
    scm:
     - git:
-       url: 'https://github.com/swarren/uboot-test-hooks.git'
+       url: '{uboot_git_url}'
        branches:
-        - 'master'
-       basedir: 'src/uboot-test-hooks'
+        - '{uboot_git_branch}'
+       basedir: 'src/u-boot'
        skip-tag: True
        wipe-workspace: False
     - git:
@@ -160,6 +160,13 @@
        branches:
         - 'master'
        basedir: 'src/u-boot-ci-scripts'
+       skip-tag: True
+       wipe-workspace: False
+    - git:
+       url: 'https://github.com/swarren/uboot-test-hooks.git'
+       branches:
+        - 'master'
+       basedir: 'src/uboot-test-hooks'
        skip-tag: True
        wipe-workspace: False
    wrappers:
