@@ -67,14 +67,9 @@
          case ~/^.*gitmaster_3rdparty_uboot-rel-24.*$/:
          case ~/^.*gitmaster_3rdparty_uboot-main-v2015.*$/:
              break
-         case ~/^.*github_swarren_u-boot.*$/:
-         case ~/^.*u-boot-denx_uboot-tegra.*$/:
-              boards.add('p2771-0000-000')
-              boards.add('p2771-0000-500')
-              break
          default:
-             boards.add('p2771-0000-a02')
-             boards.add('p2771-0000-b00')
+             boards.add('p2771-0000-000')
+             boards.add('p2771-0000-500')
              break
          }}
          return boards.sort()
