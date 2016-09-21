@@ -112,7 +112,7 @@
        send-to-individuals: False
     - trigger-parameterized-builds:
        - project: 'u-boot-{uboot_git_remote}-{uboot_git_branch_name}-test-py'
-         condition: 'UNSTABLE_OR_BETTER'
+         condition: 'ALWAYS'
          predefined-parameters: |
           build_to_test=${{BUILD_NUMBER}}
 
