@@ -64,8 +64,7 @@
          ]
          switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build') {{
          case ~/^.*gitmaster_3rdparty_uboot-rel-23.*$/:
-         case ~/^.*gitmaster_3rdparty_uboot-rel-24.*$/:
-         case ~/^.*gitmaster_3rdparty_uboot-main-v2015.*$/:
+         case ~/^.*gitmaster_3rdparty_uboot-l4t-r24.*$/:
              break
          default:
              boards.add('p2771-0000-000')
@@ -281,14 +280,8 @@
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
-       uboot_git_branch: 'rel-24'
-       uboot_git_branch_name: 'rel-24'
-       git_poll_interval: '*'
-    - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
-       uboot_git_remote: 'gitmaster_3rdparty_uboot'
-       uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
-       uboot_git_branch: 'rel-24-prod-r1'
-       uboot_git_branch_name: 'rel-24-prod-r1'
+       uboot_git_branch: 'l4t/l4t-r24.2'
+       uboot_git_branch_name: 'l4t-r24.2'
        git_poll_interval: '*'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
@@ -299,8 +292,8 @@
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
-       uboot_git_branch: 'main-v2015.07-rc2'
-       uboot_git_branch_name: 'main-v2015.07-rc2'
+       uboot_git_branch: 'rel-27'
+       uboot_git_branch_name: 'rel-27'
        git_poll_interval: '*'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
