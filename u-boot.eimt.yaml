@@ -138,14 +138,23 @@
        values:
         - 'test'
     - axis:
-       type: 'user-defined'
+       type: 'groovy'
        name: 'U_BOOT_BOARD'
-       values:
-        - 'beaver'
-        - 'dalmore'
-        - 'jetson-tk1'
-        - 'p2371-0000'
-        - 'sandbox'
+       command: |
+         def boards = [
+             'beaver',
+             'dalmore',
+             'jetson-tk1',
+             'sandbox',
+         ]
+         switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-test-py') {{
+         case ~/^.*gitmaster_3rdparty_uboot-dev-other.*$/:
+             break
+         default:
+             boards.add('p2371-0000')
+             break
+         }}
+         return boards.sort()
    scm:
     - git:
        url: '{uboot_git_url}'
