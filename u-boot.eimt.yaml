@@ -19,7 +19,7 @@
 # DEALINGS IN THE SOFTWARE.
 
 - job-template:
-   extra_email_recipients: ''
+   email_recipients: ''
    name: 'u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build'
    disabled: false
    project-type: 'matrix'
@@ -106,7 +106,7 @@
        artifacts: 'artifacts-out/${{U_BOOT_BOARD}}/*'
        fingerprint: True
     - email:
-       recipients: 'swarren@nvidia.com {extra_email_recipients}'
+       recipients: '{email_recipients}'
        notify-every-unstable-build: True
        send-to-individuals: False
     - trigger-parameterized-builds:
@@ -116,7 +116,7 @@
           build_to_test=${{BUILD_NUMBER}}
 
 - job-template:
-   extra_email_recipients: ''
+   email_recipients: ''
    name: 'u-boot-{uboot_git_remote}-{uboot_git_branch_name}-test-py'
    disabled: false
    project-type: 'matrix'
@@ -193,7 +193,7 @@
        artifacts: 'artifacts-out/*'
        fingerprint: True
     - email:
-       recipients: 'swarren@nvidia.com {extra_email_recipients}'
+       recipients: '{email_recipients}'
        notify-every-unstable-build: True
        send-to-individuals: False
 
@@ -212,113 +212,130 @@
        uboot_git_branch: 'tegra_dev'
        uboot_git_branch_name: 'tegra_dev'
        git_poll_interval: 'H/5'
+       email_recipients: 'swarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot'
        uboot_git_url: 'git://git.denx.de/u-boot.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H/15'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_arm'
        uboot_git_url: 'git://git.denx.de/u-boot-arm.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_dfu'
        uboot_git_url: 'git://git.denx.de/u-boot-dfu.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_dm'
        uboot_git_url: 'git://git.denx.de/u-boot-dm.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_fdt'
        uboot_git_url: 'git://git.denx.de/u-boot-fdt.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_i2c'
        uboot_git_url: 'git://git.denx.de/u-boot-i2c.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_mmc'
        uboot_git_url: 'git://git.denx.de/u-boot-mmc.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_net'
        uboot_git_url: 'git://git.denx.de/u-boot-net.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_spi'
        uboot_git_url: 'git://git.denx.de/u-boot-spi.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot-tegra'
        uboot_git_url: 'git://git.denx.de/u-boot-tegra.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H'
-       extra_email_recipients: 'twarren@nvidia.com'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_usb'
        uboot_git_url: 'git://git.denx.de/u-boot-usb.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_video'
        uboot_git_url: 'git://git.denx.de/u-boot-video.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
        uboot_git_branch: 'rel-23-v2015.07-rc2'
        uboot_git_branch_name: 'rel-23'
        git_poll_interval: '*'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
        uboot_git_branch: 'l4t/l4t-r24.2'
        uboot_git_branch_name: 'l4t-r24.2'
        git_poll_interval: '*'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
        uboot_git_branch: 'rel-26'
        uboot_git_branch_name: 'rel-26'
        git_poll_interval: '*'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
        uboot_git_branch: 'rel-27'
        uboot_git_branch_name: 'rel-27'
        git_poll_interval: '*'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
        uboot_git_branch: 'dev-other-v2016.07'
        uboot_git_branch_name: 'dev-other-v2016.07'
        git_poll_interval: '*'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
        uboot_git_branch: 'dev/twarren/for-eimt'
        uboot_git_branch_name: 'twarren'
        git_poll_interval: '*'
-       extra_email_recipients: 'twarren@nvidia.com'
+       email_recipients: 'twarren@nvidia.com'
