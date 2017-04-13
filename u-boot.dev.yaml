@@ -59,7 +59,6 @@
              'trimslice',
              'venice2',
              'ventana',
-             'whistler',
              'sandbox',
          ]
          switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build') {{
