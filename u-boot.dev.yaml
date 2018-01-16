@@ -134,10 +134,19 @@
              'sandbox',
          ]
          switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-test-py') {{
+         case ~/^.*gitmaster_3rdparty_uboot-rel-28.*$/:
          case ~/^.*gitmaster_3rdparty_uboot-dev-other.*$/:
              break
          default:
              boards.add('p2371-2180')
+             break
+         }}
+         switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build') {{
+         case ~/^.*gitmaster_3rdparty_uboot-rel-23.*$/:
+         case ~/^.*gitmaster_3rdparty_uboot-l4t-r24.*$/:
+             break
+         default:
+             boards.add('p2771-0000-500')
              break
          }}
          return boards.sort()
