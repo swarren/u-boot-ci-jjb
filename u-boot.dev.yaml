@@ -115,6 +115,8 @@
    name: 'u-boot-{uboot_git_remote}-{uboot_git_branch_name}-test-py'
    disabled: false
    project-type: 'matrix'
+   execution-strategy:
+     sequential: true
    logrotate:
       daysToKeep: 180
       numToKeep: 10
@@ -132,15 +134,8 @@
        command: |
          def boards = [
              'sandbox',
+             'p2371-2180',
          ]
-         switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-test-py') {{
-         case ~/^.*gitmaster_3rdparty_uboot-rel-28.*$/:
-         case ~/^.*gitmaster_3rdparty_uboot-dev-other.*$/:
-             break
-         default:
-             boards.add('p2371-2180')
-             break
-         }}
          switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build') {{
          case ~/^.*gitmaster_3rdparty_uboot-rel-23.*$/:
          case ~/^.*gitmaster_3rdparty_uboot-l4t-r24.*$/:
