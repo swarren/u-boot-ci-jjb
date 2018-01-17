@@ -147,6 +147,7 @@
              'sandbox',
          ]
          switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-test-py') {{
+         case ~/^.*gitmaster_3rdparty_uboot-rel-28.*$/:
          case ~/^.*gitmaster_3rdparty_uboot-dev-other.*$/:
              break
          default:
