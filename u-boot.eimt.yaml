@@ -216,10 +216,10 @@
        compiler: 'linaro-7.2.1-2017.11'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot'
-       uboot_git_url: 'git://git.denx.de/u-boot.git'
+       uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
-       git_poll_interval: 'H/15'
+       git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
        compiler: 'linaro-7.2.1-2017.11'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
@@ -288,10 +288,10 @@
        compiler: 'linaro-7.2.1-2017.11'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot-tegra'
-       uboot_git_url: 'git://git.denx.de/u-boot-tegra.git'
+       uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot-tegra.git'
        uboot_git_branch: 'master'
        uboot_git_branch_name: 'master'
-       git_poll_interval: 'H'
+       git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
        compiler: 'linaro-7.2.1-2017.11'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
