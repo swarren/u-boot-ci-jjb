@@ -131,6 +131,7 @@
        command: |
          def boards = [
              'sandbox',
+             'jetson-tk1',
              'p2371-2180',
          ]
          switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build') {{
