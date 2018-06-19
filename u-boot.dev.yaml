@@ -321,6 +321,15 @@
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
+       uboot_git_branch: 'l4t/l4t-r21-v2018.05'
+       uboot_git_branch_name: 'l4t-r21-v2018.05'
+       git_poll_interval: '*'
+       email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
+       compiler_arm: '/var/lib/jenkins/gcc-nv-l4t-4.5.3-glibc-2.11.3-hard/bin/arm-cortex_a9-linux-gnueabi-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
+    - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
+       uboot_git_remote: 'gitmaster_3rdparty_uboot'
+       uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
        uboot_git_branch: 'l4t/l4t-r24.2'
        uboot_git_branch_name: 'l4t-r24.2'
        git_poll_interval: '*'
