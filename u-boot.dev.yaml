@@ -94,7 +94,7 @@
     - build-name:
        name: '#${{BUILD_NUMBER}}-g${{GIT_REVISION,length=12}}'
    builders:
-    - shell: './src/u-boot-ci-scripts/build.sh "${{U_BOOT_BOARD}}" "{compiler}"'
+    - shell: './src/u-boot-ci-scripts/build.sh "${{U_BOOT_BOARD}}" "{compiler_arm}" "{compiler_aarch64}"'
    publishers:
     - archive:
        artifacts: 'artifacts-out/${{U_BOOT_BOARD}}/*'
@@ -208,7 +208,8 @@
        uboot_git_branch_name: 'tegra_dev'
        git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com'
-       compiler: 'linaro-7.2.1-2017.11'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot'
        uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot.git'
@@ -216,7 +217,8 @@
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'linaro-7.2.1-2017.11'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_arm'
        uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot-arm.git'
@@ -224,7 +226,8 @@
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'linaro-7.2.1-2017.11'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_dfu'
        uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot-dfu.git'
@@ -232,7 +235,8 @@
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'linaro-7.2.1-2017.11'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_dm'
        uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot-dm.git'
@@ -240,7 +244,8 @@
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'linaro-7.2.1-2017.11'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_fdt'
        uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot-fdt.git'
@@ -248,7 +253,8 @@
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'linaro-7.2.1-2017.11'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_i2c'
        uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot-i2c.git'
@@ -256,7 +262,8 @@
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'linaro-7.2.1-2017.11'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_mmc'
        uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot-mmc.git'
@@ -264,7 +271,8 @@
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'linaro-7.2.1-2017.11'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_net'
        uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot-net.git'
@@ -272,7 +280,8 @@
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'linaro-7.2.1-2017.11'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_spi'
        uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot-spi.git'
@@ -280,7 +289,8 @@
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'linaro-7.2.1-2017.11'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot-tegra'
        uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot-tegra.git'
@@ -288,7 +298,8 @@
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'linaro-7.2.1-2017.11'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_usb'
        uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot-usb.git'
@@ -296,7 +307,8 @@
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'linaro-7.2.1-2017.11'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'denx_uboot_video'
        uboot_git_url: 'https://gitlab-master.nvidia.com/u-boot-mirror/git.denx.de/u-boot-video.git'
@@ -304,7 +316,8 @@
        uboot_git_branch_name: 'master'
        git_poll_interval: 'H/5'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'linaro-7.2.1-2017.11'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
@@ -312,7 +325,8 @@
        uboot_git_branch_name: 'l4t-r24.2'
        git_poll_interval: '*'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'system'
+       compiler_arm: 'arm-none-eabi-'
+       compiler_aarch64: 'aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
@@ -320,7 +334,8 @@
        uboot_git_branch_name: 'rel-28'
        git_poll_interval: '*'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'system'
+       compiler_arm: 'arm-none-eabi-'
+       compiler_aarch64: 'aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
@@ -328,7 +343,8 @@
        uboot_git_branch_name: 'dev-other-v2016.07'
        git_poll_interval: '*'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler: 'system'
+       compiler_arm: 'arm-none-eabi-'
+       compiler_aarch64: 'aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
@@ -336,4 +352,5 @@
        uboot_git_branch_name: 'twarren'
        git_poll_interval: '*'
        email_recipients: 'twarren@nvidia.com'
-       compiler: 'system'
+       compiler_arm: 'arm-none-eabi-'
+       compiler_aarch64: 'aarch64-linux-gnu-'
