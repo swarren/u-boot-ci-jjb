@@ -69,6 +69,28 @@
              boards.add('p2771-0000-500')
              break
          }}
+         switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build') {{
+         case ~/^.*gitmaster_3rdparty_uboot-rel-21.*$/:
+         case ~/^.*gitmaster_3rdparty_uboot-rel-24.*$/:
+         case ~/^.*gitmaster_3rdparty_uboot-rel-28.*$/:
+         case ~/^.*gitmaster_3rdparty_uboot-rel-31.*$/:
+         case ~/^.*gitmaster_3rdparty_uboot-rel-32-v2016.07.*$/:
+         case ~/^.*gitmaster_3rdparty_uboot-dev-main-v2016.07.*$/:
+             break
+         default:
+             boards.add('p3450-0000')
+             boards.add('apalis-tk1')
+             boards.add('cei-tk1-som')
+             break
+         }}
+         switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build') {{
+         case ~/^.*gitmaster_3rdparty_uboot-rel-32-v2016.07.*$/:
+         case ~/^.*gitmaster_3rdparty_uboot-dev-main-v2016.07.*$/:
+             boards.add('p3450-porg')
+             break
+         default:
+             break
+         }}
          return boards.sort()
    scm:
     # This must be first so that ${GIT_REVISION} expands to the correct repo
@@ -379,5 +401,5 @@
        uboot_git_branch_name: 'twarren'
        git_poll_interval: '*'
        email_recipients: 'twarren@nvidia.com'
-       compiler_arm: 'arm-none-eabi-'
-       compiler_aarch64: 'aarch64-linux-gnu-'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
