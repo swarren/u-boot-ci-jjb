@@ -70,8 +70,8 @@
              break
          }}
          switch ('u-boot-{uboot_git_remote}-{uboot_git_branch_name}-build') {{
-         case ~/^.*gitmaster_3rdparty_uboot-rel-21.*$/:
-         case ~/^.*gitmaster_3rdparty_uboot-rel-24.*$/:
+         case ~/^.*gitmaster_3rdparty_uboot-l4t-r21.*$/:
+         case ~/^.*gitmaster_3rdparty_uboot-l4t-r24.*$/:
          case ~/^.*gitmaster_3rdparty_uboot-rel-28.*$/:
          case ~/^.*gitmaster_3rdparty_uboot-rel-31.*$/:
          case ~/^.*gitmaster_3rdparty_uboot-rel-32-v2016.07.*$/:
