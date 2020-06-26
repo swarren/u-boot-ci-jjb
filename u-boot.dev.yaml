@@ -383,8 +383,8 @@
        uboot_git_branch_name: 'rel-32-v2020.04'
        git_poll_interval: '*'
        email_recipients: 'swarren@nvidia.com twarren@nvidia.com'
-       compiler_arm: 'arm-none-eabi-'
-       compiler_aarch64: 'aarch64-linux-gnu-'
+       compiler_arm: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-'
+       compiler_aarch64: '/var/lib/jenkins/gcc-linaro-7.2.1-2017.11-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-'
     - u-boot-{uboot_git_remote}-{uboot_git_branch_name}:
        uboot_git_remote: 'gitmaster_3rdparty_uboot'
        uboot_git_url: 'ssh://git-master/3rdparty/u-boot'
