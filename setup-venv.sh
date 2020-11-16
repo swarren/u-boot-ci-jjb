@@ -1,5 +1,8 @@
 #!/bin/bash
 
-virtualenv  venv
+if [ ! -d venv ]; then
+    virtualenv  venv
+fi
 . ./venv/bin/activate
-pip install jenkins-job-builder
+pip install --upgrade pip
+pip install --upgrade jenkins-job-builder
